@@ -1,4 +1,5 @@
 # National Rail Departure Times Integration Component by [@crismc](https://github.com/crismc)
+[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=nationalrailtimes)
 A custom Home Assistant component to show next available trains to specific stops through the National Rail Darwin SOAP API.
 For better visuals, to be used with the Home Assistant custom card homeassistant_nationalrailtimes_lovelace (https://github.com/crismc/homeassistant_nationalrailtimes_lovelace)
 
