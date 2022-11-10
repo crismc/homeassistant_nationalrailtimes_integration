@@ -1,0 +1,5 @@
+{
+  "name": "National Rail Departure Times Integration Component",
+  "homeassistant": "2021.6.0",
+  "render_readme": true
+}

@@ -1,0 +1,16 @@
+{
+  "domain": "nationalrailtimes",
+  "name": "National Rail Departure Times",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/nationalrailtimes",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": [
+    "@crismc"
+  ],
+  "iot_class": "cloud_polling",
+  "version": "1.0.0"
+}
