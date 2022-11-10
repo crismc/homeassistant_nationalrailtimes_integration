@@ -3,7 +3,7 @@
   "name": "National Rail Departure Times",
   "config_flow": true,
   "documentation": "https://www.home-assistant.io/integrations/nationalrailtimes",
-  "requirements": [],
+  "requirements": ["xmltodict==0.13.0"],
   "ssdp": [],
   "zeroconf": [],
   "homekit": {},

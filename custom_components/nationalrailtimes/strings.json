@@ -8,7 +8,7 @@
           "api_key": "API Key",
           "arrival": "Arrival Station",
           "destination": "Destination Station",
-          "time_offset": "Time Offset",
+          "time_offset": "Walking Time To Station (offset arrival time - minutes)",
           "time_window": "Time Window"
         }
       },
