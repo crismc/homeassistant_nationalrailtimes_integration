@@ -4,7 +4,7 @@ DOMAIN = "nationalrailtimes"
 
 DEFAULT_NAME = "National Rail Departure Times"
 DEFAULT_ICON = "mdi:train"
-DEFAULT_TIME_OFFSET = 20
+DEFAULT_TIME_OFFSET = 0
 DEFAULT_TIME_WINDOW = 120
 
 NATIONAL_RAIL_URL = "https://lite.realtime.nationalrail.co.uk/OpenLDBWS/ldb9.asmx"

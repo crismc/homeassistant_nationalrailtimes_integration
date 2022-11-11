@@ -113,7 +113,8 @@ class NationalrailSensor(SensorEntity):
     def __init__(self, name, station, destination, api_key, time_offset, time_window):
         """Initialize the sensor."""
         self._platformname = name
-        self._name = name + "_" + station + "_" + destination
+        self._name = station + "_" + destination + "_" + time_offset
+        self.time_offset = time_offset
         self.destination = destination
         self.station = station
         self._state = None
@@ -126,7 +127,7 @@ class NationalrailSensor(SensorEntity):
 
     @property
     def unique_id(self):
-        return self._platformname + "_" + self._name
+        return self._name
 
     @property
     def name(self) -> str:
@@ -139,7 +140,10 @@ class NationalrailSensor(SensorEntity):
         if self.destination in STATIONS:
             destination_name = STATIONS[self.destination]
 
-        return f"Trains {station_name} to {destination_name}"
+        name = f"Trains {station_name} to {destination_name}"
+        if int(self.time_offset):
+            name = name + " (" + self.time_offset + "m walk)"
+        return name
 
     @property
     def icon(self):
@@ -190,6 +194,7 @@ class NationalrailSensor(SensorEntity):
         attributes["destination_name"] = data.get_destination_name(self.destination)
         attributes["service"] = data.get_service_details(self.destination)
         attributes["calling_points"] = data.get_calling_points(self.destination)
+        attributes["offset"] = self.time_offset
 
         attributes["station_code"] = self.station
         if self.destination in STATIONS:

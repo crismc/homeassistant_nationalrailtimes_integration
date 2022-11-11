@@ -12,7 +12,7 @@ class Api:
         self.api_key = api_key
         self.request_url = request_url
         self.soap_action = soap_action
-        self.time_offset = 20
+        self.time_offset = 0
         self.time_window = 120
         self.station = station
         self.filters = [destination]
