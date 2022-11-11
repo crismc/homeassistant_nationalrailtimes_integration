@@ -12,5 +12,6 @@
     "@crismc"
   ],
   "iot_class": "cloud_polling",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "issue_tracker": "https://github.com/crismc/homeassistant_nationalrailtimes_integration/issues"
 }
