@@ -171,9 +171,7 @@ class NationalrailSensor(SensorEntity):
             return
         except Exception:
             _LOGGER.warning("Failed to interpret received %s", "XML", exc_info=1)
-            self._state = (
-                "Cannot interpret XML for this service from National Rail"
-            )
+            self._state = "Cannot interpret XML for this service from National Rail"
             return
 
         self._state = data.get_state(self.destination)
@@ -192,5 +190,10 @@ class NationalrailSensor(SensorEntity):
         attributes["destination_name"] = data.get_destination_name(self.destination)
         attributes["service"] = data.get_service_details(self.destination)
         attributes["calling_points"] = data.get_calling_points(self.destination)
+
+        attributes["station_code"] = self.station
+        if self.destination in STATIONS:
+            attributes["target_station_name"] = STATIONS[self.destination]
+            attributes["target_station_code"] = self.destination
 
         return attributes
