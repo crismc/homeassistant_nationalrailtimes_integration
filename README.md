@@ -1,6 +1,11 @@
 # National Rail Departure Times Integration Component by [@crismc](https://github.com/crismc)
 [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=nationalrailtimes)
 
+<a href="https://www.buymeacoffee.com/jedimeat" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+[![hacs][hacs-badge]][hacs-url]
+[![release][release-badge]][release-url]
+![downloads][downloads-badge]
 
 A custom Home Assistant component to show next available trains to specific stops through the National Rail Darwin SOAP API.
 For better visuals, to be used with the Home Assistant custom card homeassistant_nationalrailtimes_lovelace (https://github.com/crismc/homeassistant_nationalrailtimes_lovelace)
@@ -87,4 +92,14 @@ sensor:
     time_offset: 20
 ```
 
+<!-- Badges -->
 [license-shield]: https://img.shields.io/github/license/custom-cards/boilerplate-card.svg?style=for-the-badge
+[hacs-badge]: https://img.shields.io/badge/hacs-default-orange.svg?style=flat-square
+[release-badge]: https://img.shields.io/github/v/release/crismc/homeassistant_nationalrailtimes_integration?style=flat-square
+[downloads-badge]: https://img.shields.io/github/downloads/crismc/homeassistant_nationalrailtimes_integration/total?style=flat-square
+
+<!-- References -->
+[hacs-url]: https://github.com/hacs/integration
+[hacs]: https://hacs.xyz
+[ui-lovelace-minimalist]: https://ui-lovelace-minimalist.github.io/UI/
+[release-url]: https://github.com/crismc/homeassistant_nationalrailtimes_integration/releases
