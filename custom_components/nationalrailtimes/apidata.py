@@ -54,7 +54,7 @@ class ApiData:
         """Parse the XML raw data and convert into a usable dictionary"""
         if self.raw_result:
             if not self._api_xml:
-                formatted = re.sub(r"lt[0-9]\:", "", self.raw_result)
+                formatted = re.sub(r"lt\d*\:", "", self.raw_result)
                 data = xmltodict.parse(formatted)
                 if data and check_key(
                     data,
@@ -125,14 +125,23 @@ class ApiData:
     def message(self):
         """Check for any station messages, such as cancelations, lack of service etc"""
         data = self.get_data()
+
+        def sub_message(message):
+            message = re.sub(
+                r"this station", self.get_station_name() + " station", message
+            )
+            message = re.sub(
+                r"more details.*", "", message, flags=re.IGNORECASE
+            ).strip()
+            return message
+
         if check_key(data, "nrccMessages"):
             messages = data["nrccMessages"]
             if check_key(messages, "message"):
-                return re.sub(
-                    r"this station",
-                    self.get_station_name() + " station",
-                    messages["message"],
-                )
+                if isinstance(messages["message"], list):
+                    return [sub_message(i) for i in messages["message"]]
+                else:
+                    return [sub_message(messages["message"])]
 
     def get_last_update(self):
         """Get the time the data was populated"""

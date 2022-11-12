@@ -1,6 +1,6 @@
 """Platform for sensor integration."""
 from __future__ import annotations
-from datetime import datetime, timedelta
+from datetime import timedelta
 import logging
 import voluptuous as vol
 
