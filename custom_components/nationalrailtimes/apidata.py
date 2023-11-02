@@ -102,7 +102,8 @@ class ApiData:
         """Get the stations the service stops at on route to the destination"""
         data = self.get_destination_data(crx)
         if data:
-            return data["subsequentCallingPoints"]["callingPointList"]["callingPoint"]
+            callingPoints = data["subsequentCallingPoints"]["callingPointList"]["callingPoint"]
+            return callingPoints if type(callingPoints) in [list, tuple] else [callingPoints] 
 
     def get_station_name(self):
         """Get the name of the station to watch for departures"""
