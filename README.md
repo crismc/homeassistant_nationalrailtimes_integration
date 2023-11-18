@@ -30,11 +30,11 @@ Simply go to the above link and choose [Register Here](http://realtime.nationalr
 ## Options
 
 | Name                 | Type    | Requirement  | Description                                                                                       | Default |
-| ---------------------| ------- | ------------ | --------------------------------------------------------------------------------------------------|---------|
+| ---------------------| ------- |--------------| --------------------------------------------------------------------------------------------------|---------|
 | api_key              | string  | **Required** | National Rail Darwin Feed API Key                                                                 | `none`  |
 | arrival              | string  | **Required** | 3 Letter CRX station code of your local station                                                   | `none`  |
 | destination          | string  | **Required** | 3 Letter CRX station code of your target destination station                                      | `none`  |
-| time_offset          | string  | **Required** | An offset in minutes against the current time to provide the station board for your local station | `none`  |
+| time_offset          | string  | **Optional** | An offset in minutes against the current time to provide the station board for your local station | `none`  |
 
 
 
@@ -85,6 +85,10 @@ Demo configuration:
 
 ```
 sensor:
+  - platform: nationalrailtimes
+    api_key: 1234abcd-1a2b3c-1a2b-9876-123abc456def
+    arrival: CHX
+    destination: ABW
   - platform: nationalrailtimes
     api_key: 1234abcd-1a2b3c-1a2b-9876-123abc456def
     arrival: ABW
